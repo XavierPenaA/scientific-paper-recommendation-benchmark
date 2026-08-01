@@ -37,7 +37,7 @@
 % ABSTRACT
 % ==============================================================================
 \begin{abstract}
-The rapid growth of scientific literature makes it challenging for researchers to discover relevant articles. While implicit collaborative filtering (CF) is a standard approach, existing evaluations are often fragmented, ignoring engineering trade-offs or statistical validation across multiple domains. This article addresses these gaps through a multi-criteria, multidimensional benchmark of six representative recommender paradigms (memory-based, deep neural networks, graph neural networks, and Transformers). The models are evaluated under a unified protocol combining time-ordered Leave-One-Out (LOO) and Random Split (RS) schemes on three real-world datasets: CiteULike-a, CiteULike-t, and BibSonomy (36 independent experimental conditions). Our analysis goes beyond ranking accuracy (Recall, NDCG, MRR) to assess catalog coverage, Gini index, popularity bias, computational costs (GPU memory, throughput), and sensitivity to training data reduction (50\% and 20\% downsampling, inducing cold-start noise). The ranking results analyzed via the Friedman test ($\chi^2 = 26.00, p < 0.001$, Kendall's $W = 0.8667$) and post-hoc Nemenyi test ($\alpha=0.05$) reveal that no single paradigm dominates all dimensions. While MultiVAE and NeuMF achieve the highest accuracy in larger datasets, they exhibit severe popularity bias and high sensitivity to data reduction. Conversely, LightGCN and SASRec demonstrate lower combined sensitivity to data scarcity and cold-start. ItemKNN requires zero training overhead while delivering the highest diversity, serving as a highly competitive baseline for resource-constrained environments. All source code, configs, and preprocessed datasets are publicly available.
+The rapid growth of scientific literature makes it challenging for researchers to discover relevant articles. While implicit collaborative filtering (CF) is a standard approach, existing evaluations are often fragmented, ignoring engineering trade-offs or statistical validation across multiple domains. This article addresses these gaps through a multi-criteria, multidimensional benchmark of six representative recommender paradigms (memory-based, deep neural networks, graph neural networks, and Transformers). The models are evaluated under a unified protocol combining time-ordered Leave-One-Out (LOO) and Random Split (RS) schemes on three real-world datasets: CiteULike-a, CiteULike-t, and BibSonomy (36 independent experimental conditions). Our analysis goes beyond ranking accuracy (Recall, Normalized Discounted Cumulative Gain [NDCG], Mean Reciprocal Rank [MRR]) to assess catalog coverage, Gini index, popularity bias, computational costs (GPU memory, throughput), and sensitivity to training data reduction (50\% and 20\% downsampling, inducing cold-start noise). The ranking results analyzed via the Friedman test ($\chi^2 = 26.00, p < 0.001$, Kendall's $W = 0.8667$) and post-hoc Nemenyi test ($\alpha=0.05$) reveal that no single paradigm dominates all dimensions. While MultiVAE and NeuMF achieve the highest accuracy in larger datasets, they exhibit severe popularity bias and high sensitivity to data reduction. Conversely, LightGCN and SASRec demonstrate lower combined sensitivity to data scarcity and cold-start. ItemKNN requires zero training overhead while delivering the highest diversity, serving as a highly competitive baseline for resource-constrained environments. All source code, configs, and preprocessed datasets are publicly available.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -265,8 +265,8 @@ For the robustness experiment against data scarcity (RQ3), the 50\% and 20\% sub
 \subsection{Hardware Specification, Batch Configuration, and Environment}
 To guarantee full reproducibility of the benchmark, all runs were performed on a dedicated workstation with the following specifications:
 \begin{itemize}
-    \item \textbf{GPU:} NVIDIA GeForce RTX 3050 Laptop GPU (4 GB GDDR6 VRAM, CUDA Compute Capability 8.6).
-    \item \textbf{CPU:} AMD Ryzen 7 5800H (8 physical cores, 16 logical threads @ 3.2 GHz base, 4.4 GHz Boost).
+    \item \textbf{Graphics Processing Unit (GPU):} NVIDIA GeForce RTX 3050 Laptop GPU (4 GB GDDR6 of Video Random Access Memory (VRAM), CUDA Compute Capability 8.6).
+    \item \textbf{Central Processing Unit (CPU):} AMD Ryzen 7 5800H (8 physical cores, 16 logical threads @ 3.2 GHz base, 4.4 GHz Boost).
     \item \textbf{System RAM:} 16 GB DDR4 @ 3200 MHz.
     \item \textbf{Software Environment:} Windows 11 Home / WSL2 Ubuntu 22.04 LTS, Python 3.10.12, PyTorch v2.1.2+cu121, RecBole v1.2.0~\cite{zhao2021recbole}.
 \end{itemize}
@@ -587,7 +587,7 @@ To ensure full reproducibility of this benchmark, all configuration files, prepr
 % REFERENCES
 % ==============================================================================
 \section*{Acknowledgment}
-The authors acknowledge the use of artificial intelligence (AI) systems (large language models) to assist in the translation, grammatical review, and stylistic polishing of this manuscript.
+The authors acknowledge the use of artificial intelligence (AI) systems, specifically Google DeepMind's Gemini 3.5 Flash~\cite{gemini2026} and Anthropic's Claude 3.5 Sonnet~\cite{claude2026}, to assist in the translation, grammatical review, and stylistic polishing of this manuscript.
 
 \bibliographystyle{IEEEtran}
 \bibliography{references}

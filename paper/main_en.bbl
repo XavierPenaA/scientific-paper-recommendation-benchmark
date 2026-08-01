@@ -102,4 +102,12 @@ J.~Dem{\v{s}}ar, ``Statistical comparisons of classifiers over multiple data
   sets,'' \emph{The Journal of Machine Learning Research}, vol.~7, pp. 1--30,
   2006.
 
+\bibitem{gemini2026}
+{Google DeepMind}, ``Gemini 3.5 flash,'' \url{https://deepmind.google/}, 2026,
+  accessed: August 2026.
+
+\bibitem{claude2026}
+{Anthropic}, ``Claude 3.5 sonnet,'' \url{https://www.anthropic.com/}, 2026,
+  accessed: August 2026.
+
 \end{thebibliography}
