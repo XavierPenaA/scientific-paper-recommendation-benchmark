@@ -1,0 +1,14 @@
+# ==============================================================================
+# ItemKNN — Baseline (Classical Collaborative Filtering)
+#
+# Reference: Sarwar et al. (2001) "Item-based Collaborative Filtering
+# Recommendation Algorithms." WWW 2001.
+#
+# Role in study: Primary baseline representing classical approaches.
+# This is the modernized, standardized version of the KNN algorithm
+# from the original 2020 prototype that motivated this study.
+# ==============================================================================
+
+model: ItemKNN
+k: 100                          # Number of neighbors
+shrink: 0                       # Shrinkage factor for similarity

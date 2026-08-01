@@ -1,0 +1,129 @@
+Created At: 2026-07-31T12:37:54Z
+Completed At: 2026-07-31T12:37:57Z
+
+				The command completed successfully.
+				Output:
+				<truncated 454 lines>
++ ... gs\transcript.jsonl' -Pattern 'USER_INPUT' | ForEach-Object { .Line }
++                                                                   ~~~~~
+    + CategoryInfo          : ObjectNotFound: (.Line:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+.Line : El t�rmino '.Line' no se reconoce como nombre de un cmdlet, funci�n, archivo de script o programa ejecutable. 
+Compruebe si escribi� correctamente el nombre o, si incluy� una ruta de acceso, compruebe que dicha ruta es correcta e 
+int�ntelo de nuevo.
+En l�nea: 1 Car�cter: 186
++ ... gs\transcript.jsonl' -Pattern 'USER_INPUT' | ForEach-Object { .Line }
++                                                                   ~~~~~
+    + CategoryInfo          : ObjectNotFound: (.Line:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+.Line : El t�rmino '.Line' no se reconoce como nombre de un cmdlet, funci�n, archivo de script o programa ejecutable. 
+Compruebe si escribi� correctamente el nombre o, si incluy� una ruta de acceso, compruebe que dicha ruta es correcta e 
+int�ntelo de nuevo.
+En l�nea: 1 Car�cter: 186
++ ... gs\transcript.jsonl' -Pattern 'USER_INPUT' | ForEach-Object { .Line }
++                                                                   ~~~~~
+    + CategoryInfo          : ObjectNotFound: (.Line:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+.Line : El t�rmino '.Line' no se reconoce como nombre de un cmdlet, funci�n, archivo de script o programa ejecutable. 
+Compruebe si escribi� correctamente el nombre o, si incluy� una ruta de acceso, compruebe que dicha ruta es correcta e 
+int�ntelo de nuevo.
+En l�nea: 1 Car�cter: 186
++ ... gs\transcript.jsonl' -Pattern 'USER_INPUT' | ForEach-Object { .Line }
++                                                                   ~~~~~
+    + CategoryInfo          : ObjectNotFound: (.Line:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+.Line : El t�rmino '.Line' no se reconoce como nombre de un cmdlet, funci�n, archivo de script o programa ejecutable. 
+Compruebe si escribi� correctamente el nombre o, si incluy� una ruta de acceso, compruebe que dicha ruta es correcta e 
+int�ntelo de nuevo.
+En l�nea: 1 Car�cter: 186
++ ... gs\transcript.jsonl' -Pattern 'USER_INPUT' | ForEach-Object { .Line }
++                                                                   ~~~~~
+    + CategoryInfo          : ObjectNotFound: (.Line:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+.Line : El t�rmino '.Line' no se reconoce como nombre de un cmdlet, funci�n, archivo de script o programa ejecutable. 
+Compruebe si escribi� correctamente el nombre o, si incluy� una ruta de acceso, compruebe que dicha ruta es correcta e 
+int�ntelo de nuevo.
+En l�nea: 1 Car�cter: 186
++ ... gs\transcript.jsonl' -Pattern 'USER_INPUT' | ForEach-Object { .Line }
++                                                                   ~~~~~
+    + CategoryInfo          : ObjectNotFound: (.Line:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+.Line : El t�rmino '.Line' no se reconoce como nombre de un cmdlet, funci�n, archivo de script o programa ejecutable. 
+Compruebe si escribi� correctamente el nombre o, si incluy� una ruta de acceso, compruebe que dicha ruta es correcta e 
+int�ntelo de nuevo.
+En l�nea: 1 Car�cter: 186
++ ... gs\transcript.jsonl' -Pattern 'USER_INPUT' | ForEach-Object { .Line }
++                                                                   ~~~~~
+    + CategoryInfo          : ObjectNotFound: (.Line:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+.Line : El t�rmino '.Line' no se reconoce como nombre de un cmdlet, funci�n, archivo de script o programa ejecutable. 
+Compruebe si escribi� correctamente el nombre o, si incluy� una ruta de acceso, compruebe que dicha ruta es correcta e 
+int�ntelo de nuevo.
+En l�nea: 1 Car�cter: 186
++ ... gs\transcript.jsonl' -Pattern 'USER_INPUT' | ForEach-Object { .Line }
++                                                                   ~~~~~
+    + CategoryInfo          : ObjectNotFound: (.Line:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+.Line : El t�rmino '.Line' no se reconoce como nombre de un cmdlet, funci�n, archivo de script o programa ejecutable. 
+Compruebe si escribi� correctamente el nombre o, si incluy� una ruta de acceso, compruebe que dicha ruta es correcta e 
+int�ntelo de nuevo.
+En l�nea: 1 Car�cter: 186
++ ... gs\transcript.jsonl' -Pattern 'USER_INPUT' | ForEach-Object { .Line }
++                                                                   ~~~~~
+    + CategoryInfo          : ObjectNotFound: (.Line:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+.Line : El t�rmino '.Line' no se reconoce como nombre de un cmdlet, funci�n, archivo de script o programa ejecutable. 
+Compruebe si escribi� correctamente el nombre o, si incluy� una ruta de acceso, compruebe que dicha ruta es correcta e 
+int�ntelo de nuevo.
+En l�nea: 1 Car�cter: 186
++ ... gs\transcript.jsonl' -Pattern 'USER_INPUT' | ForEach-Object { .Line }
++                                                                   ~~~~~
+    + CategoryInfo          : ObjectNotFound: (.Line:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+.Line : El t�rmino '.Line' no se reconoce como nombre de un cmdlet, funci�n, archivo de script o programa ejecutable. 
+Compruebe si escribi� correctamente el nombre o, si incluy� una ruta de acceso, compruebe que dicha ruta es correcta e 
+int�ntelo de nuevo.
+En l�nea: 1 Car�cter: 186
++ ... gs\transcript.jsonl' -Pattern 'USER_INPUT' | ForEach-Object { .Line }
++                                                                   ~~~~~
+    + CategoryInfo          : ObjectNotFound: (.Line:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+.Line : El t�rmino '.Line' no se reconoce como nombre de un cmdlet, funci�n, archivo de script o programa ejecutable. 
+Compruebe si escribi� correctamente el nombre o, si incluy� una ruta de acceso, compruebe que dicha ruta es correcta e 
+int�ntelo de nuevo.
+En l�nea: 1 Car�cter: 186
++ ... gs\transcript.jsonl' -Pattern 'USER_INPUT' | ForEach-Object { .Line }
++                                                                   ~~~~~
+    + CategoryInfo          : ObjectNotFound: (.Line:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+.Line : El t�rmino '.Line' no se reconoce como nombre de un cmdlet, funci�n, archivo de script o programa ejecutable. 
+Compruebe si escribi� correctamente el nombre o, si incluy� una ruta de acceso, compruebe que dicha ruta es correcta e 
+int�ntelo de nuevo.
+En l�nea: 1 Car�cter: 186
++ ... gs\transcript.jsonl' -Pattern 'USER_INPUT' | ForEach-Object { .Line }
++                                                                   ~~~~~
+    + CategoryInfo          : ObjectNotFound: (.Line:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+.Line : El t�rmino '.Line' no se reconoce como nombre de un cmdlet, funci�n, archivo de script o programa ejecutable. 
+Compruebe si escribi� correctamente el nombre o, si incluy� una ruta de acceso, compruebe que dicha ruta es correcta e 
+int�ntelo de nuevo.
+En l�nea: 1 Car�cter: 186
++ ... gs\transcript.jsonl' -Pattern 'USER_INPUT' | ForEach-Object { .Line }
++                                                                   ~~~~~
+    + CategoryInfo          : ObjectNotFound: (.Line:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+

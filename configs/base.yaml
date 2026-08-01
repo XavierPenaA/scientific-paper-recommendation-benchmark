@@ -1,0 +1,47 @@
+# ==============================================================================
+# RecBole Base Configuration — CiteULike (Implicit Feedback)
+# Shared settings for all models in the paper recommendation benchmark study
+# ==============================================================================
+
+# --- Environment ---
+gpu_id: 0
+use_gpu: True
+seed: 2024
+reproducibility: True
+
+# --- Data Settings ---
+USER_ID_FIELD: user_id
+ITEM_ID_FIELD: item_id
+TIME_FIELD: timestamp
+load_col:
+    inter: [user_id, item_id, timestamp]
+
+# --- Filtering (standard 5-core) ---
+# Users and items with fewer than 5 interactions are removed
+user_inter_num_interval: "[5,inf)"
+item_inter_num_interval: "[5,inf)"
+
+# --- Evaluation Protocol ---
+# For CiteULike, we use temporal order or random split based on availability
+eval_args:
+    split: {'RS': [0.8, 0.1, 0.1]}
+    group_by: user
+    order: RO                    # Random Order (default, overridden if timestamp is loaded)
+    mode: full                   # Full ranking (no negative sampling, standard in modern papers)
+
+# --- Metrics ---
+# Top-N with N in {5, 10, 20}
+topk: [5, 10, 20]
+valid_metric: NDCG@10           # Primary metric for early stopping
+metrics: ['Recall', 'NDCG', 'MRR', 'Precision', 'MAP']
+
+# --- Training ---
+epochs: 300
+train_batch_size: 2048
+eval_batch_size: 4096
+stopping_step: 10               # Early stopping step limit (epochs of no improvement)
+checkpoint_dir: '../results/checkpoints'
+
+# --- Logging ---
+log_wandb: True
+wandb_project: 'scientific-paper-recommendation-benchmark'

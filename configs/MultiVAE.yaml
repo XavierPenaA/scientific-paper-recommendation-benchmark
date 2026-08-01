@@ -1,0 +1,22 @@
+# ==============================================================================
+# MultiVAE — Variational Autoencoder for Collaborative Filtering
+#
+# Reference: Liang et al. (2018) "Variational Autoencoders for Collaborative
+# Filtering." WWW 2018.
+#
+# Role in study: Represents generative/probabilistic approaches to CF.
+# Learns a latent representation of user preferences via variational inference.
+# ==============================================================================
+
+model: MultiVAE
+
+# Architecture
+latent_dimension: 128
+mlp_hidden_size: [600]
+dropout_prob: 0.5
+anneal_cap: 0.2
+total_anneal_steps: 200000
+
+# Training
+learning_rate: 0.001
+train_batch_size: 512

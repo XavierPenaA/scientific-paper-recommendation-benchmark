@@ -1,0 +1,23 @@
+# ==============================================================================
+# LightGCN — Simplified Graph Convolution for Recommendation
+#
+# Reference: He et al. (2020) "LightGCN: Simplifying and Powering Graph
+# Convolution Network for Recommendation." SIGIR 2020.
+#
+# Role in study: State-of-the-art GNN approach. Removes feature transformation
+# and nonlinear activation from NGCF, keeping only neighborhood aggregation.
+# Demonstrates that simpler graph architectures often outperform complex ones.
+# ==============================================================================
+
+model: LightGCN
+
+# Architecture
+embedding_size: 64
+n_layers: 3                     # Number of graph convolution layers
+
+# Regularization
+reg_weight: 1e-4                # L2 regularization
+
+# Training
+learning_rate: 0.001
+train_batch_size: 2048

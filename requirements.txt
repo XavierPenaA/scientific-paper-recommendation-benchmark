@@ -1,0 +1,36 @@
+# requirements.txt — Research: KNN to Transformers Benchmark
+# ===========================================================
+# Core ML Framework
+recbole>=1.2.0
+torch>=2.0.0
+torchvision
+
+# Data Processing
+pandas>=2.0
+numpy>=1.24
+scipy>=1.10
+
+# Explainability
+shap>=0.43
+captum>=0.6               # PyTorch-native attribution (attention analysis)
+
+# Visualization
+matplotlib>=3.7
+seaborn>=0.12
+plotly>=5.15
+
+# Experiment Tracking
+wandb                      # Weights & Biases (free tier sufficient)
+
+# Datasets
+datasets                   # HuggingFace datasets (for Amazon Reviews 2023)
+
+# Utilities
+scikit-learn>=1.3
+tqdm
+pyyaml
+tabulate                   # Pretty-print results tables
+
+# LLM-Augmented Re-ranking (Phase 3)
+google-generativeai        # Gemini API
+# transformers             # Uncomment if using local HF models instead

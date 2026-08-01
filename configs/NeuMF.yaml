@@ -1,0 +1,22 @@
+# ==============================================================================
+# NeuMF — Neural Collaborative Filtering
+#
+# Reference: He et al. (2017) "Neural Collaborative Filtering." WWW 2017.
+#
+# Role in study: Represents the first generation of deep learning approaches
+# to collaborative filtering, combining GMF and MLP components.
+# ==============================================================================
+
+model: NeuMF
+
+# Architecture
+mf_embedding_size: 64
+mlp_embedding_size: 64
+mlp_hidden_size: [256, 128, 64]
+dropout_prob: 0.1
+
+# Training
+learning_rate: 0.001
+mf_train: True
+mlp_train: True
+train_batch_size: 1024

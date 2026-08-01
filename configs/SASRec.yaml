@@ -1,0 +1,39 @@
+# ==============================================================================
+# SASRec — Self-Attentive Sequential Recommendation
+#
+# Reference: Kang & McAuley (2018) "Self-Attentive Sequential Recommendation."
+# ICDM 2018.
+#
+# Role in study: State-of-the-art sequential model. Uses unidirectional
+# self-attention (like GPT) to model the temporal sequence of user interactions.
+# Petrov & Macdonald (RecSys 2023) showed SASRec consistently outperforms
+# BERT4Rec under equivalent training conditions.
+# ==============================================================================
+
+model: SASRec
+
+# Architecture
+n_layers: 2
+n_heads: 2
+hidden_size: 64
+inner_size: 256                  # FFN hidden size
+hidden_dropout_prob: 0.5
+attn_dropout_prob: 0.5
+hidden_act: 'gelu'
+layer_norm_eps: 1e-12
+
+# Sequence
+MAX_ITEM_LIST_LENGTH: 50
+loss_type: 'CE'                 # Cross-Entropy loss
+
+# Evaluation Override
+eval_args:
+    split: {'LS': 'valid_and_test'}
+    group_by: user
+    order: TO
+    mode: full
+
+# Training
+learning_rate: 0.001
+train_batch_size: 256           # Smaller batch for 4GB VRAM
+train_neg_sample_args: null

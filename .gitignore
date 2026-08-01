@@ -1,0 +1,65 @@
+# ==============================================================================
+# Research Project: From KNN to Transformers
+# Comparative and Explainable Study of Movie Recommendation Architectures
+# ==============================================================================
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+dist/
+build/
+*.egg
+
+# Virtual Environments
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data (downloaded at runtime, too large for git)
+data/raw/
+data/processed/
+data/*.zip
+data/*.csv
+data/*.inter
+data/*.tsv
+
+# Model checkpoints and results (generated at runtime)
+results/saved/
+results/checkpoints/
+results/**/*.pth
+results/**/*.pkl
+
+# LaTeX build artifacts
+paper/*.aux
+paper/*.bbl
+paper/*.blg
+paper/*.log
+paper/*.out
+paper/*.toc
+paper/*.fls
+paper/*.fdb_latexmk
+paper/*.synctex.gz
+# paper/*.pdf
+
+# W&B / MLflow
+wandb/
+mlruns/
+
+# Extra local folders to ignore
+scratch/
+papers/
