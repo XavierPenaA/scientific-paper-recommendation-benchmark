@@ -63,3 +63,5 @@ mlruns/
 # Extra local folders to ignore
 scratch/
 papers/
+paper/ACCESS_latex_template_20260513/
+

@@ -1,4 +1,22 @@
-\documentclass[journal]{IEEEtran}
+\documentclass{ieeeaccess}
+
+\usepackage{spotcolor}
+
+% Bold font setup for ieeeaccess
+\makeatletter
+\AtBeginDocument{\DeclareMathVersion{bold}
+\SetSymbolFont{operators}{bold}{T1}{times}{b}{n}
+\SetSymbolFont{NewLetters}{bold}{T1}{times}{b}{it}
+\SetMathAlphabet{\mathrm}{bold}{T1}{times}{b}{n}
+\SetMathAlphabet{\mathit}{bold}{T1}{times}{b}{it}
+\SetMathAlphabet{\mathbf}{bold}{T1}{times}{b}{n}
+\SetMathAlphabet{\mathtt}{bold}{OT1}{pcr}{b}{n}
+\SetSymbolFont{symbols}{bold}{OMS}{cmsy}{b}{n}
+\renewcommand\boldmath{\@nomath\boldmath\mathversion{bold}}}
+\makeatother
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 
 \usepackage[utf8]{inputenc}
 \usepackage[spanish,es-tabla]{babel}
@@ -18,21 +36,26 @@
 \newcommand{\at}[1]{@#1}
 
 \begin{document}
+\history{Date of publication August 01, 2026, date of current version August 01, 2026.}
+\doi{10.1109/ACCESS.2026.0429000}
 
 % ==============================================================================
 % TÍTULO Y AUTORES
 % ==============================================================================
 \title{Benchmark Multi-Criterio de Paradigmas de Filtrado Colaborativo para Recomendación de Literatura Científica: Un Estudio de Robustez y Generalización}
 
-\author{Xavier~Peña y Diego~Rivera%
-\thanks{Ambos autores contribuyeron equitativamente a este trabajo.}%
-\thanks{X. Peña está con la carrera de Computación, Facultad de Ingeniería, Universidad de Cuenca, Cuenca, Ecuador (e-mail: xavier.pena@ucuenca.edu.ec).}%
-\thanks{D. Rivera está con la Universidad Politécnica Salesiana, Cuenca, Ecuador (e-mail: driverag2@est.ups.edu.ec). También es Vicepresidente de la Sociedad de Tecnología Vehicular (VTS) de IEEE Sección Ecuador.}}
+\author{\uppercase{Xavier Peña}\authorrefmark{1} Y
+\uppercase{Diego Rivera}\authorrefmark{2}}
+\address[1]{carrera de Computación, Facultad de Ingeniería, Universidad de Cuenca, Cuenca 010150, Ecuador (e-mail: xavier.pena@ucuenca.edu.ec)}
+\address[2]{Universidad Politécnica Salesiana, Cuenca 010105, Ecuador (e-mail: driverag2@est.ups.edu.ec)}
+\tfootnote{Ambos autores contribuyeron equitativamente a este trabajo. D. Rivera es también Vicepresidente de la Sociedad de Tecnología Vehicular (VTS) de IEEE Sección Ecuador.}
+\corresp{Autor de correspondencia: Xavier Peña (e-mail: xavier.pena@ucuenca.edu.ec).}
 
-\markboth{Manuscrito en Revisión}%
-{Peña y Rivera: Benchmark de Paradigmas de Recomendación para Literatura Científica}
+\markboth
+{Peña y Rivera: Benchmark Multi-Criterio de Paradigmas de Filtrado Colaborativo}
+{Peña y Rivera: Benchmark Multi-Criterio de Paradigmas de Filtrado Colaborativo}
 
-\maketitle
+
 
 % ==============================================================================
 % RESUMEN (ABSTRACT)
@@ -41,9 +64,12 @@
 El crecimiento acelerado de la producción de literatura científica dificulta que la comunidad investigadora identifique manuscritos relevantes dentro de su dominio de estudio. Aunque los sistemas de recomendación (SR) basados en filtrado colaborativo implícito constituyen una solución establecida para este problema, la literatura especializada presenta frecuentemente evaluaciones fragmentadas que omiten compensaciones de ingeniería (trade-offs) o que carecen de justificaciones estadísticas sobre la variabilidad de los resultados. Este artículo aborda dicha brecha mediante un estudio comparativo multi-criterio y multidimensional de seis familias algorítmicas representativas (incluyendo métodos basados en memoria, redes neuronales profundas, grafos y Transformers). Los modelos son evaluados bajo un protocolo experimental unificado que combina esquemas de evaluación Leave-One-Out (LOO) con preservación de orden cronológico y Random Split 80/10/10 (RS) sobre tres conjuntos de datos reales e independientes: CiteULike-a, CiteULike-t y BibSonomy (36 condiciones experimentales en total). La comparación trasciende las métricas tradicionales de precisión del ranking (Recall, Ganancia Acumulativa Descontada Normalizada [Normalized Discounted Cumulative Gain, NDCG], Rango Recíproco Medio [Mean Reciprocal Rank, MRR]), analizando la cobertura del catálogo, el índice de Gini, el sesgo de popularidad, los costos computacionales en VRAM y throughput de inferencia (usuarios/s), y la sensibilidad de los modelos ante la reducción de datos de entrenamiento, incluyendo el cold-start parcial inducido (mediante simulaciones de reducción al 50\% y 20\%). Los resultados en precisión de ranking, analizados en NDCG\at{10} mediante la prueba de Friedman ($\chi^2 = 26.00, df = 5, p < 0.001$) sobre $N=6$ condiciones independientes y el test de Nemenyi ($\alpha = 0.05$), sugieren diferencias globales significativas bajo la semilla única evaluada, revelando que ningún paradigma prevalece uniformemente en todas las dimensiones y requiriendo cautela en la generalización por la varianza de inicialización. Si bien MultiVAE y NeuMF obtienen la mayor precisión en colecciones de mayor volumen de interacciones, presentan una elevada concentración en artículos populares y una alta sensibilidad a la reducción de datos de entrenamiento. Por su parte, LightGCN y SASRec presentan una menor sensibilidad combinada a la escasez y al cold-start parcial inducido, mientras que ItemKNN registra el menor costo computacional y la mayor diversidad intra-lista, posicionándose como un baseline de referencia relevante para infraestructuras con recursos restringidos.
 \end{abstract}
 
-\begin{IEEEkeywords}
+\begin{keywords}
 Sistemas de recomendación, literatura científica, filtrado colaborativo, redes neuronales sobre grafos, Transformers, robustez, análisis estadístico.
-\end{IEEEkeywords}
+\end{keywords}
+
+\titlepgskip=-21pt
+\maketitle
 
 % ==============================================================================
 % 1. INTRODUCCIÓN
@@ -235,7 +261,7 @@ La Tabla~\ref{tab:datasets} sintetiza las características cuantitativas de cada
 \label{tab:datasets}
 \begin{tabular}{lrrrrr}
 \toprule
-\textbf{Dataset} & \textbf{Usuarios} & \textbf{Ítems} & \textbf{Interacciones} & \textbf{Densidad} & \textbf{Int./User} \\
+\textbf{Dataset} & \textbf{Usuarios} & \textbf{Items} & \textbf{Interacciones} & \textbf{Densidad} & \textbf{Int./User} \\
 \midrule
 CiteULike-a & 5,536 & 15,429 & 200,180 & 0.2344\% & 36.16 \\
 CiteULike-t & 3,527 & 6,339  & 77,546  & 0.3468\% & 21.99 \\
@@ -607,5 +633,7 @@ recibió el título de Ingeniero en Computación de la Universidad de Cuenca, Cu
 es investigador y docente en la Universidad Politécnica Salesiana, Cuenca, Ecuador. Se desempeña como Vicepresidente de la Sociedad de Tecnología Vehicular (VTS) de IEEE Sección Ecuador. Sus áreas de interés en investigación abarcan las redes vehiculares, ciudades inteligentes, sistemas de recomendación y aprendizaje de máquina aplicado.
 \end{IEEEbiographynophoto}
 
+
+\EOD
 
 \end{document}

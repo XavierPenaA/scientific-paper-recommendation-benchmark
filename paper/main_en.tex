@@ -1,4 +1,22 @@
-\documentclass[journal]{IEEEtran}
+\documentclass{ieeeaccess}
+
+\usepackage{spotcolor}
+
+% Bold font setup for ieeeaccess
+\makeatletter
+\AtBeginDocument{\DeclareMathVersion{bold}
+\SetSymbolFont{operators}{bold}{T1}{times}{b}{n}
+\SetSymbolFont{NewLetters}{bold}{T1}{times}{b}{it}
+\SetMathAlphabet{\mathrm}{bold}{T1}{times}{b}{n}
+\SetMathAlphabet{\mathit}{bold}{T1}{times}{b}{it}
+\SetMathAlphabet{\mathbf}{bold}{T1}{times}{b}{n}
+\SetMathAlphabet{\mathtt}{bold}{OT1}{pcr}{b}{n}
+\SetSymbolFont{symbols}{bold}{OMS}{cmsy}{b}{n}
+\renewcommand\boldmath{\@nomath\boldmath\mathversion{bold}}}
+\makeatother
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 
 \usepackage[utf8]{inputenc}
 \usepackage{booktabs}
@@ -17,21 +35,26 @@
 \newcommand{\at}[1]{@#1}
 
 \begin{document}
+\history{Date of publication August 01, 2026, date of current version August 01, 2026.}
+\doi{10.1109/ACCESS.2026.0429000}
 
 % ==============================================================================
 % TITLE & AUTHORS
 % ==============================================================================
 \title{A Multi-Criteria Benchmark of Collaborative Filtering Paradigms for Scientific Paper Recommendation: A Study of Robustness and Generalization}
 
-\author{Xavier~Peña and Diego~Rivera%
-\thanks{Both authors contributed equally to this work.}%
-\thanks{X. Peña is with the Carrera de Computación, Facultad de Ingeniería, Universidad de Cuenca, Cuenca, Ecuador (e-mail: xavier.pena@ucuenca.edu.ec).}%
-\thanks{D. Rivera is with the Universidad Politécnica Salesiana, Cuenca, Ecuador (e-mail: driverag2@est.ups.edu.ec). He is also Vice-President of the IEEE Vehicular Technology Society (VTS) Ecuador Chapter.}}
+\author{\uppercase{Xavier Peña}\authorrefmark{1},
+AND \uppercase{Diego Rivera}\authorrefmark{2}}
+\address[1]{Carrera de Computación, Facultad de Ingeniería, Universidad de Cuenca, Cuenca 010150, Ecuador (e-mail: xavier.pena@ucuenca.edu.ec)}
+\address[2]{Universidad Politécnica Salesiana, Cuenca 010105, Ecuador (e-mail: driverag2@est.ups.edu.ec)}
+\tfootnote{Both authors contributed equally to this work. D. Rivera is also Vice-President of the IEEE Vehicular Technology Society (VTS) Ecuador Chapter.}
+\corresp{Corresponding author: Xavier Peña (e-mail: xavier.pena@ucuenca.edu.ec).}
 
-\markboth{Submission under Review}%
-{Peña and Rivera: A Multi-Criteria Benchmark of Recommender Paradigms for Scientific Literature}
+\markboth
+{Peña and Rivera: A Multi-Criteria Benchmark of Collaborative Filtering Paradigms}
+{Peña and Rivera: A Multi-Criteria Benchmark of Collaborative Filtering Paradigms}
 
-\maketitle
+
 
 % ==============================================================================
 % ABSTRACT
@@ -40,9 +63,12 @@
 The rapid growth of scientific literature makes it challenging for researchers to discover relevant articles. While implicit collaborative filtering (CF) is a standard approach, existing evaluations are often fragmented, ignoring engineering trade-offs or statistical validation across multiple domains. This article addresses these gaps through a multi-criteria, multidimensional benchmark of six representative recommender paradigms (memory-based, deep neural networks, graph neural networks, and Transformers). The models are evaluated under a unified protocol combining time-ordered Leave-One-Out (LOO) and Random Split (RS) schemes on three real-world datasets: CiteULike-a, CiteULike-t, and BibSonomy (36 independent experimental conditions). Our analysis goes beyond ranking accuracy (Recall, Normalized Discounted Cumulative Gain [NDCG], Mean Reciprocal Rank [MRR]) to assess catalog coverage, Gini index, popularity bias, computational costs (GPU memory, throughput), and sensitivity to training data reduction (50\% and 20\% downsampling, inducing cold-start noise). The ranking results analyzed via the Friedman test ($\chi^2 = 26.00, p < 0.001$, Kendall's $W = 0.8667$) and post-hoc Nemenyi test ($\alpha=0.05$) reveal that no single paradigm dominates all dimensions. While MultiVAE and NeuMF achieve the highest accuracy in larger datasets, they exhibit severe popularity bias and high sensitivity to data reduction. Conversely, LightGCN and SASRec demonstrate lower combined sensitivity to data scarcity and cold-start. ItemKNN requires zero training overhead while delivering the highest diversity, serving as a highly competitive baseline for resource-constrained environments. All source code, configs, and preprocessed datasets are publicly available.
 \end{abstract}
 
-\begin{IEEEkeywords}
+\begin{keywords}
 Recommender systems, scientific literature, collaborative filtering, graph neural networks, Transformers, robustness, statistical analysis.
-\end{IEEEkeywords}
+\end{keywords}
+
+\titlepgskip=-21pt
+\maketitle
 
 % ==============================================================================
 % 1. INTRODUCTION
@@ -600,5 +626,7 @@ received the engineering degree in Computer Science from the Universidad de Cuen
 is a researcher and professor at the Universidad Politécnica Salesiana, Cuenca, Ecuador. He serves as the Vice-President of the IEEE Vehicular Technology Society (VTS) Ecuador Chapter. His research interests include vehicular networks, smart cities, recommender systems, and applied machine learning.
 \end{IEEEbiographynophoto}
 
+
+\EOD
 
 \end{document}
