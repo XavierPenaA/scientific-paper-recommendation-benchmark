@@ -1,19 +1,4 @@
-\documentclass{ieeeaccess}
-
-\usepackage{spotcolor}
-
-% Bold font setup for ieeeaccess
-\makeatletter
-\AtBeginDocument{\DeclareMathVersion{bold}
-\SetSymbolFont{operators}{bold}{T1}{times}{b}{n}
-\SetSymbolFont{NewLetters}{bold}{T1}{times}{b}{it}
-\SetMathAlphabet{\mathrm}{bold}{T1}{times}{b}{n}
-\SetMathAlphabet{\mathit}{bold}{T1}{times}{b}{it}
-\SetMathAlphabet{\mathbf}{bold}{T1}{times}{b}{n}
-\SetMathAlphabet{\mathtt}{bold}{OT1}{pcr}{b}{n}
-\SetSymbolFont{symbols}{bold}{OMS}{cmsy}{b}{n}
-\renewcommand\boldmath{\@nomath\boldmath\mathversion{bold}}}
-\makeatother
+\documentclass[journal]{IEEEtran}
 
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
@@ -36,39 +21,22 @@
 \newcommand{\at}[1]{@#1}
 
 \begin{document}
-\history{Date of publication August 01, 2026, date of current version August 01, 2026.}
-\doi{10.1109/ACCESS.2026.0429000}
+
+
 
 % ==============================================================================
 % TÍTULO Y AUTORES
 % ==============================================================================
 \title{Benchmark Multi-Criterio de Paradigmas de Filtrado Colaborativo para Recomendación de Literatura Científica: Un Estudio de Robustez y Generalización}
 
-\author{\uppercase{Xavier Peña}\authorrefmark{1} Y
-\uppercase{Diego Rivera}\authorrefmark{2}}
-\address[1]{carrera de Computación, Facultad de Ingeniería, Universidad de Cuenca, Cuenca 010150, Ecuador (e-mail: xavier.pena@ucuenca.edu.ec)}
-\address[2]{Universidad Politécnica Salesiana, Cuenca 010105, Ecuador (e-mail: driverag2@est.ups.edu.ec)}
-\tfootnote{Ambos autores contribuyeron equitativamente a este trabajo. D. Rivera es también Vicepresidente de la Sociedad de Tecnología Vehicular (VTS) de IEEE Sección Ecuador.}
-\corresp{Autor de correspondencia: Xavier Peña (e-mail: xavier.pena@ucuenca.edu.ec).}
+\author{Xavier~Peña y Diego~Rivera%
+\thanks{Ambos autores contribuyeron equitativamente a este trabajo.}%
+\thanks{X. Peña está con la carrera de Computación, Facultad de Ingeniería, Universidad de Cuenca, Cuenca, Ecuador (e-mail: xavier.pena@ucuenca.edu.ec).}%
+\thanks{D. Rivera está con la Universidad Politécnica Salesiana, Cuenca, Ecuador (e-mail: driverag2@est.ups.edu.ec). También es Vicepresidente de la Sociedad de Tecnología Vehicular (VTS) de IEEE Sección Ecuador.}}
 
-\markboth
-{Peña y Rivera: Benchmark Multi-Criterio de Paradigmas de Filtrado Colaborativo}
-{Peña y Rivera: Benchmark Multi-Criterio de Paradigmas de Filtrado Colaborativo}
+\markboth{Manuscrito en Revisión}%
+{Peña y Rivera: Benchmark de Paradigmas de Recomendación para Literatura Científica}
 
-
-
-% ==============================================================================
-% RESUMEN (ABSTRACT)
-% ==============================================================================
-\begin{abstract}
-El crecimiento acelerado de la literatura científica dificulta que los investigadores descubran artículos relevantes. Aunque el filtrado colaborativo (FC) implícito es el enfoque predominante, las evaluaciones existentes suelen ser fragmentadas, omitiendo aspectos de ingeniería o validación estadística. Este artículo aborda dicha brecha mediante un benchmark comparativo multi-criterio de seis paradigmas representativos (basados en memoria, redes profundas, grafos y Transformers). Los modelos se evalúan bajo un protocolo unificado de Leave-One-Out (LOO) temporal y Random Split (RS) en tres conjuntos de datos reales (CiteULike-a, CiteULike-t y BibSonomy), analizando precisión de ranking (Recall, NDCG, MRR), cobertura, sesgo de popularidad, costos de cómputo y resiliencia ante la escasez de datos (reducciones al 50\% y 20\%). La prueba de Friedman ($\chi^2 = 26.00, p < 0.001$, W de Kendall = $0.8667$) y el test post-hoc de Nemenyi indican que ningún modelo domina todas las dimensiones. MultiVAE y NeuMF logran la mayor precisión en datasets grandes, pero exhiben sesgo de popularidad y alta sensibilidad a la escasez. En contraste, LightGCN y SASRec muestran menor sensibilidad combinada a la escasez y al ruido de cold-start. ItemKNN ofrece el menor costo computacional y la mayor diversidad, siendo un baseline competitivo para entornos con recursos limitados. El código y los conjuntos de datos preprocesados están disponibles públicamente.
-\end{abstract}
-
-\begin{keywords}
-Sistemas de recomendación, literatura científica, filtrado colaborativo, redes neuronales sobre grafos, Transformers, robustez, análisis estadístico.
-\end{keywords}
-
-\titlepgskip=-21pt
 \maketitle
 
 % ==============================================================================
@@ -625,15 +593,5 @@ Los autores agradecen el uso de sistemas de inteligencia artificial, específica
 \bibliographystyle{IEEEtran}
 \bibliography{references}
 
-\begin{IEEEbiographynophoto}{Xavier Peña}
-recibió el título de Ingeniero en Computación de la Universidad de Cuenca, Cuenca, Ecuador. Sus áreas de interés en investigación incluyen el filtrado colaborativo, los sistemas de recomendación, el aprendizaje de máquina y la reproducibilidad de arquitecturas de redes neuronales aplicadas a la recomendación de literatura académica.
-\end{IEEEbiographynophoto}
-
-\begin{IEEEbiographynophoto}{Diego Rivera}
-es investigador y docente en la Universidad Politécnica Salesiana, Cuenca, Ecuador. Se desempeña como Vicepresidente de la Sociedad de Tecnología Vehicular (VTS) de IEEE Sección Ecuador. Sus áreas de interés en investigación abarcan las redes vehiculares, ciudades inteligentes, sistemas de recomendación y aprendizaje de máquina aplicado.
-\end{IEEEbiographynophoto}
-
-
-\EOD
 
 \end{document}
