@@ -13,6 +13,7 @@
 \usepackage{multirow}
 \usepackage{url}
 \usepackage{cite}
+\usepackage[hidelinks]{hyperref}
 \usepackage{float}
 \usepackage{tabularx}
 \usepackage{array}
@@ -38,6 +39,17 @@
 {Peña y Rivera: Benchmark de Paradigmas de Recomendación para Literatura Científica}
 
 \maketitle
+
+% ==============================================================================
+% ABSTRACT Y KEYWORDS
+% ==============================================================================
+\begin{abstract}
+Este trabajo presenta un benchmark multi-criterio de seis paradigmas de filtrado colaborativo para recomendación de literatura científica. Se evalúan modelos heurísticos (ItemKNN), de factorización de matrices (NeuMF, MultiVAE), secuenciales basados en Transformers (SASRec, BERT4Rec) y de grafos (LightGCN) sobre tres datasets de dominio académico (CiteULike-a, CiteULike-t, ML-1M adaptado) bajo dos protocolos de partición (Leave-One-Out y Random Split). El estudio integra métricas de precisión de ranking (NDCG@10, Recall@10), diversidad (Cobertura de catálogo, Índice de Gini), robustez a datos escasos y eficiencia computacional (memoria, throughput). Los resultados muestran que ItemKNN ofrece el mejor equilibrio precisión-eficiencia en dominios de alta dispersión, mientras que los métodos neurales obtienen ventajas marginales a mayor densidad. Este benchmark proporciona una base reproducible para la selección de modelos de recomendación en entornos académicos reales.
+\end{abstract}
+
+\begin{IEEEkeywords}
+Filtrado colaborativo, sistemas de recomendación, literatura científica, benchmark, retroalimentación implícita, evaluación multi-criterio, robustez, eficiencia computacional.
+\end{IEEEkeywords}
 
 % ==============================================================================
 % 1. INTRODUCCIÓN
@@ -312,7 +324,7 @@ donde $\chi^2$ es el estadístico de Friedman y $k=6$ es el número de modelos. 
 \label{sec:resultados}
 
 \subsection{Precisión del Ranking Offline entre Paradigmas (RQ1 y RQ2)}
-Las Tablas~\ref{tab:results-loo} y~\ref{tab:results-rs} resumen de manera exhaustiva el desempeño empírico de los seis modelos evaluados bajo las **36 condiciones experimentales independientes** (3 conjuntos de datos $\times$ 2 protocolos de partición $\times$ 6 arquitecturas).
+Las Tablas~\ref{tab:results-loo} y~\ref{tab:results-rs} resumen de manera exhaustiva el desempeño empírico de los seis modelos evaluados bajo las \textbf{36 condiciones experimentales independientes} (3 conjuntos de datos $\times$ 2 protocolos de partición $\times$ 6 arquitecturas).
 
 \begin{table*}[t]
 \centering
@@ -482,7 +494,7 @@ La Figura~\ref{fig:heatmap} presenta un análisis de diversidad inter-paradigma 
 A nivel descriptivo, se observa una débil tendencia positiva entre precisión y popularidad promedio (Pearson $r = +0.1924$ sobre el total de $n=36$ condiciones) y una tendencia negativa moderada con el Índice de Gini ($r = -0.3786$); sin embargo, dado que las $n=36$ observaciones no son estadísticamente independientes --- los mismos 6 modelos se repiten en cada uno de los 6 bloques, constituyendo exactamente el tipo de pseudo-replicación que el marco de la Sección~\ref{sec:metodologia} evita deliberadamente para las pruebas de Friedman --- estas correlaciones carecen de validez inferencial formal y deben interpretarse únicamente como patrones descriptivos del benchmark:
 \begin{itemize}
     \item \textbf{ItemKNN:} Tiende a favorecer una mayor diversidad y cobertura del catálogo (ItemCoverage\at{10} = 0.8297 en CiteULike-t RS) con un índice de Gini reducido (0.6194), sugiriendo una propensión descriptiva a recomendar trabajos de nicho.
-    \item \textbf{LightGCN y MultiVAE:} Exhiben descriptivamente una concentración más elevada en ítems populares (Gini > 0.77), orientando sus recomendaciones preferentemente hacia artículos de alto impacto dentro del dataset evaluado.
+    \item \textbf{LightGCN y MultiVAE:} Exhiben descriptivamente una concentración más elevada en ítems populares (Gini $> 0.77$), orientando sus recomendaciones preferentemente hacia artículos de alto impacto dentro del dataset evaluado.
 \end{itemize}
 
 \subsection{Análisis de Compensaciones Multi-Criterio y Frontera de Pareto (RQ4)}
@@ -582,7 +594,7 @@ Los resultados aplican al dominio de marcadores académicos (CiteULike, BibSonom
 Este estudio presentó un benchmark multi-criterio de seis paradigmas de recomendación sobre tres conjuntos de datos académicos. Los resultados confirman que la precisión offline (NDCG, Recall) debe ser ponderada junto a la eficiencia computacional, la diversidad y la robustez ante la escasez de datos. Como trabajo futuro, se plantea la integración de Modelos de Lenguaje de Gran Escala (LLMs) para mitigar el arranque en frío mediante representaciones semánticas de resúmenes científicos.
 
 \section*{Disponibilidad de Datos y Código}
-Para asegurar la reproducibilidad completa de este benchmark, todos los archivos de configuración, scripts de preprocesamiento, de entrenamiento, pesos de modelos entrenados y los reportes de resultados crudos se encuentran disponibles de manera pública en el repositorio de GitHub de la investigación en \url{https://github.com/XavierPenaA/scientific-paper-recommendation-benchmark}. El estado exacto del código correspondiente a los resultados reportados se identifica mediante el tag \texttt{v1.0-benchmark} del repositorio.
+Para asegurar la reproducibilidad completa de este benchmark, todos los archivos de configuración, scripts de preprocesamiento, de entrenamiento, pesos de modelos entrenados y los reportes de resultados crudos se encuentran disponibles de manera pública en el repositorio de GitHub de la investigación en \url{https://github.com/XavierPenaA/scientific-paper-recommendation-benchmark}. El estado exacto del código correspondiente a los resultados reportados se identifica mediante el tag \texttt{v1.0-benchmark} del repositorio. Adicionalmente, una instantánea permanente y citable de esta versión se encuentra archivada en Zenodo bajo el DOI~\href{https://doi.org/10.5281/zenodo.23505825}{10.5281/zenodo.23505825}.
 
 % ==============================================================================
 % REFERENCIAS
